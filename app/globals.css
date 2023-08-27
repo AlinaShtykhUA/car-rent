@@ -217,3 +217,10 @@
   @apply cursor-default select-none py-2 pl-10 pr-4;
 }
 /* END: search manufacturer styles */
+.hover-opacity{
+  @apply hover:opacity-80 transition ease-linear delay-150;
+}
+
+.hover-color{
+  @apply hover:text-blue-500 transition ease-linear delay-150;
+}

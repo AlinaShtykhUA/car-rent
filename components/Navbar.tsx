@@ -13,13 +13,13 @@ const Navbar = () => {
             alt="Car hub logo"
             width={118}
             height={18}
-            className="object-contain"
+            className="object-contain hover-opacity"
           />
         </Link>
         <CustomButton
           title="Sign In"
           btnType="button"
-          containerStyles="text-primary-blue rounded-full bg-white min-w-[130px]"
+          containerStyles="text-primary-blue rounded-full bg-white min-w-[130px] hover-opacity"
         />
       </nav>
     </header>
