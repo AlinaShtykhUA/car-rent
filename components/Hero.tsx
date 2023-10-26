@@ -5,7 +5,7 @@ import { CustomButton } from ".";
 const Hero = () => {
   const handleScroll = () => {};
   return (
-    <div className="hero">
+    <section className="hero">
       <div className="flex-1 pt-36 padding-x">
         <h1 className="hero__title">
           Find, book, or rent a car — quickly and easily!
@@ -23,10 +23,10 @@ const Hero = () => {
       <div className="hero__image-container">
         <div className="hero__image">
           <Image src="/hero.png" alt="hero" fill className="object-contain" />
-          <div className="hero__image-overlay" />
         </div>
+        <div className="hero__image-overlay" />
       </div>
-    </div>
+    </section>
   );
 };
 
