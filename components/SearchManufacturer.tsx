@@ -1,4 +1,5 @@
 "use client";
+
 import { Fragment, useState } from "react";
 
 import Image from "next/image";
@@ -22,6 +23,7 @@ const SearchManufacturer = ({
             .replace(/\s+/g, "")
             .includes(query.toLowerCase().replace(/\s+/g, ""))
         );
+
   return (
     <div className="search-manufacturer">
       <Combobox value={manufacturer} onChange={setManufacturer}>
