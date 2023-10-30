@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import { ICarProps } from "@/types";
 import { CarDetails, CustomButton } from ".";
-import { calculateCarRent } from "@/utils";
+import { calculateCarRent, generateCarImageUrl } from "@/utils";
 
 interface ICarCardProps {
   car: ICarProps;
@@ -18,6 +18,9 @@ const CarCard = ({ car }: ICarCardProps) => {
 
   const handleIsOpen = () => {
     setIsOpen(true);
+  };
+  const handleIsClose = () => {
+    setIsOpen(false);
   };
   return (
     <div className="car-card group">
@@ -35,7 +38,7 @@ const CarCard = ({ car }: ICarCardProps) => {
 
       <div className="relative w-full h-40 my-3 object-contain">
         <Image
-          src="/hero.png"
+          src={generateCarImageUrl(car)}
           alt="car model"
           fill
           priority
@@ -79,7 +82,7 @@ const CarCard = ({ car }: ICarCardProps) => {
         </div>
       </div>
 
-      <CarDetails />
+      <CarDetails isOpen={isOpen} car={car} closeModal={handleIsClose} />
     </div>
   );
 };
