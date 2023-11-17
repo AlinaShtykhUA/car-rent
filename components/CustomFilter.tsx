@@ -1,29 +1,20 @@
 "use client";
 import React, { Fragment, useState } from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 
 import { ICustomFilterProps } from "@/types";
-import { updateSearchParams } from "@/utils";
 import { Listbox, Transition } from "@headlessui/react";
 
-
-const CustomFilter = ({ title, options }: ICustomFilterProps) => {
+const CustomFilter = ({ title, options, setFilter }: ICustomFilterProps) => {
   const [selected, setSelected] = useState(options[0]);
-  const router = useRouter();
 
-  const handleUpdateParams = (e: { title: string; value: string }) => {
-    const newPathName = updateSearchParams(title, e.value.toLowerCase());
-
-    router.push(newPathName);
-  };
   return (
     <div className="w-fit">
       <Listbox
         value={selected}
         onChange={(e) => {
           setSelected(e);
-          handleUpdateParams(e);
+          setFilter(e.value);
         }}
       >
         <div className="relative w-fit z-10">
