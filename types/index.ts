@@ -47,3 +47,8 @@ export interface IFilterProps {
   limit: number;
   model: string;
 }
+
+export interface IShowMoreProps {
+  pageNumber: number;
+  isNext: boolean;
+}
